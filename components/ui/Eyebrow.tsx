@@ -1,11 +1,25 @@
+import { ReactNode } from "react";
+import clsx from "clsx";
+
 interface EyebrowProps {
-  children: React.ReactNode;
+  children: ReactNode;
+  light?: boolean;
+  className?: string;
 }
 
-export default function Eyebrow({ children }: EyebrowProps) {
+export default function Eyebrow({
+  children,
+  light = false,
+  className,
+}: EyebrowProps) {
   return (
-    <span className="inline-flex items-center gap-2 text-[#C9971C] text-[11px] font-bold tracking-[0.22em] uppercase mb-5">
-      <span className="w-8 h-px bg-[#C9971C]" />
+    <span
+      className={clsx(
+        "inline-flex items-center rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.2em]",
+        light ? "bg-white/10 text-[#C9971C]" : "bg-[#0F5B3A]/10 text-[#0F5B3A]",
+        className,
+      )}
+    >
       {children}
     </span>
   );
