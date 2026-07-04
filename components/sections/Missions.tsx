@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Target, Eye, Flag } from "lucide-react";
 import { fadeUp, stagger } from "@/lib/animation";
