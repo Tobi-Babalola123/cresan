@@ -31,7 +31,7 @@ const TIMELINE = [
   {
     year: "Today",
     title: "Driving Clean Energy Across Nigeria",
-    desc: "Actively shaping Nigeria's energy transition with programs in 36 states and a network of 40+ partner organizations.",
+    desc: "Actively shaping Nigeria's energy transition with programs in 36 states, and a network of 40+ partner organizations.",
   },
 ];
 
