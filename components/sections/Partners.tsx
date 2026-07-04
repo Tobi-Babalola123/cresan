@@ -3,27 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
+import { fadeUp, stagger } from "@/lib/animation";
 
 const PARTNERS = [
   {
@@ -62,7 +42,7 @@ export default function Partners() {
   });
 
   return (
-    <section ref={ref} className="border-y border-gray-100 bg-[#F8FAF8] py-24">
+    <section ref={ref} className="border-y border-gray-100 bg-[#F8FAF8] py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <motion.p
           initial={{ opacity: 0 }}
@@ -102,13 +82,13 @@ export default function Partners() {
                   transition={{ duration: 0.25 }}
                   className="group flex shrink-0 justify-center"
                 >
-                  <div className="relative h-28 w-52 lg:h-32 lg:w-60">
+                  <div className="relative h-20 w-44 lg:h-28 lg:w-55">
                     <Image
                       src={partner.logo}
                       alt={partner.name}
                       fill
                       sizes="240px"
-                      className="object-contain grayscale opacity-70 transition-all duration-300 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100 group-hover:drop-shadow-[0_15px_30px_rgba(15,91,58,0.25)]"
+                      className="object-contain  transition-all duration-300 group-hover:scale-105 group-hover:grayscale-0 group-hover:opacity-100 group-hover:drop-shadow-[0_15px_30px_rgba(15,91,58,0.25)]"
                     />
                   </div>
                 </motion.div>

@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Target, Eye, Flag } from "lucide-react";
+import { fadeUp, stagger } from "@/lib/animation";
 
 const SERIF = "'DM Serif Display', Georgia, serif";
 
@@ -18,27 +19,6 @@ function useScrolled(threshold = 80) {
   }, [threshold]);
   return scrolled;
 }
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
 
 export default function Mission() {
   const ref = useRef<HTMLDivElement>(null);

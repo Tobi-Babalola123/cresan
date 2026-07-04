@@ -4,29 +4,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin } from "lucide-react";
 import Eyebrow from "@/components/ui/Eyebrow";
-
+import { fadeUp, stagger } from "@/lib/animation";
 const SERIF = "'DM Serif Display', Georgia, serif";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
 
 const EVENTS = [
   {

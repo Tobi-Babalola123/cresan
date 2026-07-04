@@ -10,31 +10,11 @@ import {
   Megaphone,
   Handshake,
 } from "lucide-react";
+import { fadeUp, stagger } from "@/lib/animation";
 
 import Eyebrow from "@/components/ui/Eyebrow";
 
 const SERIF = "'DM Serif Display', Georgia, serif";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
 
 export default function FocusAreas() {
   const ref = useRef<HTMLDivElement>(null);

@@ -3,29 +3,9 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import { fadeUp, stagger } from "@/lib/animation";
 
 const SERIF = "'DM Serif Display', Georgia, serif";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
 
 function useScrolled(threshold = 80) {
   const [scrolled, setScrolled] = useState(false);
